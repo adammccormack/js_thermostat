@@ -1,10 +1,9 @@
-describe("Player", function() {
-  var player;
-  var song;
+describe("Thermostat", function() {
+  var thermostat;
+
 
   beforeEach(function() {
-    player = new Player();
-    song = new Song();
+    thermostat = new Thermostat();
   });
 
   it("should be able to play a Song", function() {
