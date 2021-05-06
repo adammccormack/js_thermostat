@@ -8,7 +8,13 @@ describe('Thermostat', () => {
   });
 
   it('starts at 20 degrees', () => {
-    thermostat = new Thermostat();
-    expect(thermostat.temp).toEqual(20);
+    expect(thermostat.currentTemp()).toEqual(20);
   });
+
+  it('increases temperature', () => {
+    thermostat.increaseTemp();
+    expect(thermostat.currentTemp()).toEqual(21);
+  });
+
+
 });
