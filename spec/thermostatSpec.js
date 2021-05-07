@@ -28,5 +28,12 @@ describe('Thermostat', () => {
     expect(thermostat.currentTemp()).toEqual(10);
   });
 
+  it('turns on power saving mode', () => {
+    expect(thermostat.powerSaveOn()).toBe(true);
+  });
+
+  it('turns off power saving mode', () => {
+    expect(thermostat.powerSaveOff()).toBe(false);
+  });
 
 });
