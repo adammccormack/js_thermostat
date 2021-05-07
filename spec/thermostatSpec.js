@@ -22,11 +22,10 @@ describe('Thermostat', () => {
   });
 
   it('sets min temp at 10 degrees', () => {
-    expect(thermostat.minTemp()).toEqual(10);
-  });
-
-  it('power saving mode on', () => {
-    expect(powerSavingmode).toEqual(true);
+    for (let i = 0; i < 11; i++) {
+      thermostat.decreaseTemp();
+    }
+    expect(thermostat.currentTemp()).toEqual(10);
   });
 
 
