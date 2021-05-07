@@ -6,7 +6,7 @@ class Thermostat{
     this.MIN_TEMP = 10;
     this.MAX_TEMP = 25;
     this.CLIMATE_CHANGE_YEAH_BABY_TEMP = 32;
-    this.power_save = null;
+    this.power_save = true;
   }
 
 
@@ -34,6 +34,10 @@ class Thermostat{
       return;
     }
     this.temp -= 1;
+  }
+
+  resetTemp() {
+    return this.temp = 20;
   }
 
   isMinTemp () {
