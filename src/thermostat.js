@@ -3,6 +3,7 @@
 class Thermostat{
   constructor() {
     this.temp = 20;
+    this.mintemp = 10;
   }
 
   currentTemp() {
@@ -16,4 +17,9 @@ class Thermostat{
   decreaseTemp() {
     return (this.temp -= 1);
   }
+
+  minTemp() {
+    return this.mintemp;
+  }
+
 }
