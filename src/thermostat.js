@@ -2,6 +2,7 @@
 
 class Thermostat{
   constructor() {
+    this.DEFAULT_TEMP = 20;
     this.temp = 20;
     this.MIN_TEMP = 10;
     this.MAX_TEMP = 25;
@@ -39,7 +40,7 @@ class Thermostat{
   }
 
   resetTemp() {
-    return this.temp = 20;
+    return (this.DEFAULT_TEMP);
   }
 
   isMinTemp () {
