@@ -23,17 +23,9 @@ class Thermostat{
   }
 
   increaseTemp() {
-    if (this.power_save === true) {
-      return this.temp === this.MAX_TEMP
-    }
-
-    else if (this.power_save === false) {
-      return this.temp === this.CLIMATE_CHANGE_YEAH_BABY_TEMP
-    }
-
-    else if (this.isMaxTemp()) {
+    if (this.isMaxTemp()) {
       return;
-      }
+    }
     this.temp += 1;
   }
 
@@ -49,6 +41,12 @@ class Thermostat{
   }
 
   isMaxTemp () {
+    if (this.power_save === true) {
+      return (this.temp === this.MAX_TEMP);
+    }
+    else if (this.power_save === false) {
+      return (this.temp === this.CLIMATE_CHANGE_YEAH_BABY_TEMP);
+    }
     return (this.temp === this.MAX_TEMP);
   }
 
