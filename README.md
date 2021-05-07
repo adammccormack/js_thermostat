@@ -8,9 +8,9 @@ You can decrease the temperature with a down function - check
 
 The minimum temperature is 10 degrees - check
 
-If power saving mode is on, the maximum temperature is 25 degrees - 
+If power saving mode is on, the maximum temperature is 25 degrees - check
 
-If power saving mode is off, the maximum temperature is 32 degrees -
+If power saving mode is off, the maximum temperature is 32 degrees - 
 
 Power saving mode is on by default but it can also be turned off
 
