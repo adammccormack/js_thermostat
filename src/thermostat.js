@@ -18,7 +18,7 @@ class Thermostat{
     if (this.isMinTemp()) {
       return;
     }
-    this.temp -= 1
+    this.temp -= 1;
   }
 
   isMinTemp () {
