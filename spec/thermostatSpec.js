@@ -54,4 +54,9 @@ describe('Thermostat', () => {
     expect(thermostat.currentTemp()).toEqual(20);
   });
 
+  it('checks current energy usage', () => {
+    expect(thermostat.energyReading()).toEqual('medium');
+  });
+
+
 });

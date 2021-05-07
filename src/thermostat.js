@@ -7,6 +7,8 @@ class Thermostat{
     this.MAX_TEMP = 25;
     this.CLIMATE_CHANGE_YEAH_BABY_TEMP = 32;
     this.power_save = true;
+    this.LOW_ENERGY_USAGE = 18;
+    this.MEDIUM_ENERGY_USAGE = 25;
   }
 
 
@@ -54,4 +56,15 @@ class Thermostat{
     return (this.temp === this.MAX_TEMP);
   }
 
+  energyReading() {
+    if (this.temp < this.LOW_ENERGY_USAGE) {
+      return 'low';
+    }
+    else if (this.temp <= this.MEDIUM_ENERGY_USAGE) {
+      return 'medium';
+    }
+    else {
+      return 'high';
+    }
+  }
 }
