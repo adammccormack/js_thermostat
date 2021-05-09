@@ -14,11 +14,13 @@ class Thermostat{
 
 
   powerSaveOn() {
+    console.log("Power saving on")
     return (this.power_save = true);
   }
 
   powerSaveOff() {
-    return (this.power_save = false);
+    console.log("Power saving off")
+    return (this.power_save = false);s
   }
 
   currentTemp() {
@@ -40,7 +42,7 @@ class Thermostat{
   }
 
   resetTemp() {
-    return (this.DEFAULT_TEMP);
+    return (this.temp = this.DEFAULT_TEMP);
   }
 
   isMinTemp () {
@@ -58,7 +60,7 @@ class Thermostat{
   }
 
   energyReading() {
-    if (this.temp < this.LOW_ENERGY_USAGE) {
+    if (this.temp <= this.LOW_ENERGY_USAGE) {
       return 'low';
     }
     else if (this.temp <= this.MEDIUM_ENERGY_USAGE) {
