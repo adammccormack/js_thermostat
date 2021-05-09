@@ -1,9 +1,6 @@
-var thermostat = new Thermostat;
+'use strict'
 
-document.addEventListener("DOMContentLoaded", () => {
-  const thermostat = new Thermostat();
-  document.querySelector('#temperature').innerText = thermostat.temp
-})
+var thermostat = new Thermostat;
 
 document.querySelector('#temperature-up').addEventListener('click', () => { // event listener
   thermostat.increaseTemp(); // update model
@@ -33,6 +30,12 @@ document.querySelector('#powersaving-on').addEventListener('click', () => {
     })
 
     const updateTemperature = () => {
-    document.querySelector('#temperature').innerText = thermostat.temp;
-    document.querySelector('#temperature').className = thermostat.energyReading();
+  document.querySelector('#temperature').innerText = thermostat.temp;
+  if (thermostat.energyReading() === 'low') {
+    document.querySelector('#temperature').style.color = 'green';
+  } else if (thermostat.energyReading() === 'medium') {
+    document.querySelector('#temperature').style.color = 'black';
+  } else {
+    document.querySelector('#temperature').style.color = 'red';
   }
+}
