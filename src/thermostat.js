@@ -3,28 +3,17 @@
 class Thermostat{
   constructor() {
     this.DEFAULT_TEMP = 20;
-    this.temp = 20;
+    this.temp = this.DEFAULT_TEMP;
     this.MIN_TEMP = 10;
-    this.MAX_TEMP = 25;
-    this.CLIMATE_CHANGE_YEAH_BABY_TEMP = 32;
-    this.power_save = true;
+    this.MAX_TEMP_PSM_ON = 25;
+    this.MAX_TEMP_PSM_OFF = 32;
+    this.powerSave = true;
     this.LOW_ENERGY_USAGE = 18;
     this.MEDIUM_ENERGY_USAGE = 25;
   }
 
-
-  powerSaveOn() {
-    console.log("Power saving on")
-    return (this.power_save = true);
-  }
-
-  powerSaveOff() {
-    console.log("Power saving off")
-    return (this.power_save = false);s
-  }
-
   currentTemp() {
-    return this.temp;
+     return this.temp;
   }
 
   increaseTemp() {
@@ -41,33 +30,48 @@ class Thermostat{
     this.temp -= 1;
   }
 
-  resetTemp() {
-    return (this.temp = this.DEFAULT_TEMP);
-  }
-
   isMinTemp () {
-    return (this.temp === this.MIN_TEMP);
+    return this.temp === this.MIN_TEMP;
   }
 
   isMaxTemp () {
-    if (this.power_save === true) {
-      return (this.temp === this.MAX_TEMP);
+    if (this.isPowerSaveOn() === false) {
+      return this.temp === this.MAX_TEMP_PSM_OFF;
     }
-    else if (this.power_save === false) {
-      return (this.temp === this.CLIMATE_CHANGE_YEAH_BABY_TEMP);
-    }
-    return (this.temp === this.MAX_TEMP);
+    
+    return this.temp === this.MAX_TEMP_PSM_ON;
   }
+
+  isPowerSaveOn() {
+    return this.powerSave === true
+  };
+
+  powerSaveOn() {
+    //console.log("Power saving on")
+    this.powerSave = true;
+  }
+
+  powerSaveOff() {
+    //console.log("Power saving off")
+    this.powerSave = false;
+  }
+
+
+  resetTemp() {
+    this.temp = this.DEFAULT_TEMP;
+  }
+
+  
+
+  
 
   energyReading() {
     if (this.temp <= this.LOW_ENERGY_USAGE) {
       return 'low';
     }
-    else if (this.temp <= this.MEDIUM_ENERGY_USAGE) {
+    if (this.temp <= this.MEDIUM_ENERGY_USAGE) {
       return 'medium';
     }
-    else {
       return 'high';
-    }
   }
 }
